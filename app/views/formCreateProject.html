@@ -1,0 +1,32 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="cancel()"><span aria-hidden="true">&times;</span></button>
+  <h3 class="modal-title">Create a new project</h3>
+</div>
+<div class="modal-body">
+  <form role="form" class="form-horizontal">
+    <div class="form-group">
+      <label class="col-lg-3 control-label">Project Code</label>
+      <div class="col-lg-9">
+        <input type="text" class="form-control" placeholder="Enter project short code" ng-model="model.projectId">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-lg-3 control-label">Name</label>
+      <div class="col-lg-9">
+        <input type="text" class="form-control" placeholder="Project name" ng-model="model.name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-lg-3 control-label">Description</label>
+      <div class="col-lg-9">
+        <input type="text" class="form-control" placeholder="Project description" ng-model="model.description">
+      </div>
+    </div>
+  </form>
+  <p class="error" ng-show="err">{{err}}</p>
+  <p class="good" ng-show="msg">{{msg}}</p>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="cancel()">Cancel</button>
+  <button type="button" class="btn btn-primary" ng-click="ok()">Create Project</button>
+</div>
