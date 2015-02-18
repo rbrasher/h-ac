@@ -21,20 +21,20 @@ angular.module('app')
       //Project dashboard (no children)
       .state('projects', {
         url: '/projects',
-        templateUrl: 'tpl/projects.html',
+        templateUrl: 'views/projects.html',
         resolve: {
           deps: ['$ocLazyLoad', function($ocLazyLoad) {
-            return $ocLazyLoad.load(['js/controllers/projects.js']);
+            return $ocLazyLoad.load(['scripts/controllers/projects.js']);
           }]
         }
       })
 
       .state('project.detail', {
         url: '/detail',
-        templateUrl: 'plugins/project/detail/project_detail_view.html',
+        templateUrl: 'views/detail/project_detail_view.html',
         resolve: {
           deps: ['$ocLazyLoad', function($ocLazyLoad) {
-            return $ocLazyLoad.load(['plugins/project/detail/project_detail_ctrl.js']);
+            return $ocLazyLoad.load(['scripts/controllers/projectDetailCtrl.js']);
           }]
         }
       })
@@ -43,35 +43,35 @@ angular.module('app')
       .state('content', {
         abstract: true,
         url: '/content/{projectId}',
-        templateUrl: 'tpl/project.html'
+        templateUrl: 'views/project.html'
       })
 
       .state('content.summary', {
         url: '/summary',
-        templateUrl: 'plugins/project/content/content_summary_view.html',
+        templateUrl: 'views/content/content_summary_view.html',
         resolve: {
           deps: ['$ocLazyLoad', function($ocLazyLoad) {
-            return $ocLazyLoad.load(['plugins/project/content/content_summary_ctrl.js']);
+            return $ocLazyLoad.load(['scripts/controllers/contentSummaryCtrl.js']);
           }]
         }
       })
 
       .state('content.add', {
         url: '/add',
-        templateUrl: 'plugins/project/content/content_add_view.html',
+        templateUrl: 'views/content/content_add_view.html',
         resolve: {
           deps: ['$ocLazyLoad', function($ocLazyLoad) {
-            return $ocLazyLoad.load(['plugins/project/content/content_add_ctrl.js']);
+            return $ocLazyLoad.load(['scripts/controllers/contentAddCtrl.js']);
           }]
         }
       })
 
       .state('content.detail', {
         url: '/detail/{contentId}',
-        templateUrl: 'plugins/project/content/content_detail_view.html',
+        templateUrl: 'views/content/content_detail_view.html',
         resolve: {
           deps: ['$ocLazyLoad', function($ocLazyLoad) {
-            return $ocLazyLoad.load(['plugins/project/content/content_detail_ctrl.js']);
+            return $ocLazyLoad.load(['script/controllers/contentDetailCtrl.js']);
           }]
         }
       })
@@ -84,35 +84,35 @@ angular.module('app')
       .state('app', {
         abstract: true,
         url: '/app',
-        templateUrl: 'tpl/app.html'
+        templateUrl: 'views/app.html'
       })
 
       //.state('app.projects', {
       //    url: '/projects',
-      //    templateUrl: 'tpl/app_projects.html',
+      //    templateUrl: 'views/app_projects.html',
       //    resolve: {
       //        deps: ['$ocLazyLoad', function($ocLazyLoad) {
-      //            return $ocLazyLoad.load(['js/controllers/projects.js']);
+      //            return $ocLazyLoad.load(['scripts/controllers/projects.js']);
       //        }]
       //    }
       //})
 
       .state('app.dashboard-v1', {
         url: '/dashboard-v1',
-        templateUrl: 'tpl/app_dashboard_v1.html',
+        templateUrl: 'views/app_dashboard_v1.html',
         resolve: {
           deps: ['$ocLazyLoad', function($ocLazyLoad) {
-            return $ocLazyLoad.load(['js/controllers/chart.js'])
+            return $ocLazyLoad.load(['scripts/controllers/chart.js'])
           }]
         }
       })
 
       .state('app.dashboard-v2', {
         url: '/dashboard-v2',
-        templateUrl: 'tpl/app_dashboard-v2.html',
+        templateUrl: 'views/app_dashboard-v2.html',
         resolve: {
           deps: ['ocLazyLoad', function($ocLazyLoad) {
-            return $ocLazyLoad.load(['js/controllers.chart.js'])
+            return $ocLazyLoad.load(['scripts/controllers/chart.js'])
           }]
         }
       })
@@ -124,51 +124,51 @@ angular.module('app')
 
       .state('app.ui.buttons', {
         url: '/buttons',
-        templateUrl: 'tpl/ui_buttons.html'
+        templateUrl: 'views/ui_buttons.html'
       })
 
       .state('app.ui.icons', {
         url: '/icons',
-        templateUrl: 'tpl/ui_icons.html'
+        templateUrl: 'views/ui_icons.html'
       })
 
       .state('app.ui.grid', {
         url: '/grid',
-        templateUrl: 'tpl/ui_grid.html'
+        templateUrl: 'views/ui_grid.html'
       })
 
       .state('app.ui.widgets', {
         url: '/widgets',
-        templateUrl: 'tpl/ui_widgets.html'
+        templateUrl: 'views/ui_widgets.html'
       })
 
       .state('app.ui.bootstrap', {
         url: '/bootstrap',
-        templateUrl: 'tpl/ui_bootstrap.html'
+        templateUrl: 'views/ui_bootstrap.html'
       })
 
       .state('app.ui.sortable', {
         url: '/sortable',
-        templateUrl: 'tpl/ui_sortable.html'
+        templateUrl: 'views/ui_sortable.html'
       })
 
       .state('app.ui.portlet', {
         url: '/portlet',
-        templateUrl: 'tpl/ui_portlet.html'
+        templateUrl: 'views/ui_portlet.html'
       })
 
       .state('app.ui.timeline', {
         url: '/timeline',
-        templateUrl: 'tpl/ui_timeline.html'
+        templateUrl: 'views/ui_timeline.html'
       })
 
       .state('app.ui.tree', {
         url: '/tree',
-        templateUrl: 'tpl/ui_tree.html',
+        templateUrl: 'views/ui_tree.html',
         resolve: {
           deps: ['$ocLazyLoad', function($ocLazyLoad) {
             return $ocLazyLoad.load('angularBootstrapNavTree').then(function() {
-              return $ocLazyLoad.load('js/controllers/tree.js');
+              return $ocLazyLoad.load('scripts/controllers/tree.js');
             });
           }]
         }
@@ -176,12 +176,12 @@ angular.module('app')
 
       .state('app.ui.toaster', {
         url: '/toaster',
-        templateUrl: 'tpl/ui_toaster.html',
+        templateUrl: 'views/ui_toaster.html',
         resolve: {
           deps: ['$ocLazyLoad', function($ocLazyLoad) {
             return $ocLazyLoad.load('toaster').then(
               function() {
-                return $ocLazyLoad.load('js/controllers/toaster.js');
+                return $ocLazyLoad.load('scripts/controllers/toaster.js');
               }
             );
           }]
@@ -190,23 +190,23 @@ angular.module('app')
 
       .state('app.ui.jvectormap', {
         url:  '/jvectormap',
-        templateUrl: 'tpl/ui_jvectormap.html',
+        templateUrl: 'views/ui_jvectormap.html',
         resolve: {
           deps: ['$ocLazyLoad', function($ocLazyLoad) {
-            return $ocLazyLoad.load('js/controllers/vectormap.js');
+            return $ocLazyLoad.load('scripts/controllers/vectormap.js');
           }]
         }
       })
 
       .state('app.ui.googlemap', {
         url: '/googlemap',
-        templateUrl: 'tpl/ui_googlemap.html',
+        templateUrl: 'views/ui_googlemap.html',
         resolve: {
           deps: ['uiLoad', function(uiLoad) {
             return uiLoad.load([
-              'js/app/map/load-google-maps.js',
-              'js/app/map/ui-map.js',
-              'js/app/map/map.js'
+              'scripts/app/map/load-google-maps.js',
+              'scripts/app/map/ui-map.js',
+              'scripts/app/map/map.js'
             ]).then(function() {
               return loadGoogleMaps();
             });
@@ -216,10 +216,10 @@ angular.module('app')
 
       .state('app.chart', {
         url: '/chart',
-        templateUrl: 'tpl/ui_chart.html',
+        templateUrl: 'views/ui_chart.html',
         resolve: {
           deps: ['uiLoad', function(uiLoad) {
-            return uiLoad.load('js/controllers/chart.js');
+            return uiLoad.load('scripts/controllers/chart.js');
           }]
         }
       })
@@ -232,26 +232,26 @@ angular.module('app')
 
       .state('app.table.static', {
         url: '/static',
-        templateUrl: 'tpl/table_static.html'
+        templateUrl: 'views/table_static.html'
       })
 
       .state('app.table.datatable', {
         url: '/datatable',
-        templateUrl: 'tpl/table_datatable.html'
+        templateUrl: 'views/table_datatable.html'
       })
 
       .state('app.table.footable', {
         url: '/footable',
-        templateUrl: 'tpl/table_footable.html'
+        templateUrl: 'views/table_footable.html'
       })
 
       .state('app.table.grid', {
         url: '/grid',
-        templateUrl: 'tpl/table_grid.html',
+        templateUrl: 'views/table_grid.html',
         resolve: {
           deps: ['$ocLazyLoad', function($ocLazyLoad) {
             return $ocLazyLoad.load('ngGrid').then(function() {
-              return $ocLazyLoad.load('js/controllers.grid.js');
+              return $ocLazyLoad.load('scripts/controllers/grid.js');
             });
           }]
         }
@@ -259,11 +259,11 @@ angular.module('app')
 
       .state('app.table.uigrid', {
         url: '/uigrid',
-        templateUrl: 'tpl/table_uigrid.html',
+        templateUrl: 'views/table_uigrid.html',
         resolve: {
           deps: ['$ocLazyLoad', function($ocLazyLoad) {
             return $ocLazyLoad.load('ui.grid').then(function() {
-              return $ocLazyLoad.load('js/controllers/uigrid.js');
+              return $ocLazyLoad.load('scripts/controllers/uigrid.js');
             });
           }]
         }
@@ -271,12 +271,12 @@ angular.module('app')
 
       .state('app.table.editable', {
         url: '/editable',
-        templateUrl: 'tpl/table_editable.html',
+        templateUrl: 'views/table_editable.html',
         controller: 'XeditableCtrl',
         resolve: {
           deps: ['$ocLazyLoad', function($ocLazyLoad) {
             return $ocLazyLoad.load('xeditable').then(function() {
-              return $ocLazyLoad.load('js/controllers/xeditable.js');
+              return $ocLazyLoad.load('scripts/controllers/xeditable.js');
             });
           }]
         }
@@ -288,33 +288,33 @@ angular.module('app')
         template: '<div ui-view class="fade-in"></div>',
         resolve: {
           deps: ['uiLoad', function(uiLoad) {
-            return uiLoad.load('js/controllers/form.js');
+            return uiLoad.load('scripts/controllers/form.js');
           }]
         }
       })
 
       .state('app.form.elements', {
         url: '/elements',
-        templateUrl: 'tpl/form_elements.html'
+        templateUrl: 'views/form_elements.html'
       })
 
       .state('app.form.validation', {
         url: '/validation',
-        templateUrl: 'tpl/form_validation.html'
+        templateUrl: 'views/form_validation.html'
       })
 
       .state('app.form.wizard', {
         url: '/wizard',
-        templateUrl: 'tpl/form_wizard.html'
+        templateUrl: 'views/form_wizard.html'
       })
 
       .state('app.form.fileupload', {
         url: '/fileupload',
-        templateUrl: 'tpl/form_fileupload.html',
+        templateUrl: 'views/form_fileupload.html',
         resolve: {
           deps: ['$ocLazyLoad', function($ocLazyLoad) {
             return $ocLazyLoad.load('angularFileUpload').then(function() {
-              return $ocLazyLoad.load('js/controllers/file-upload.js');
+              return $ocLazyLoad.load('scripts/controllers/file-upload.js');
             });
           }]
         }
@@ -322,11 +322,11 @@ angular.module('app')
 
       .state('app.form.imagecrop', {
         url: '/imagecrop',
-        templateUrl: 'tpl/form_imagecrop.html',
+        templateUrl: 'views/form_imagecrop.html',
         resolve: {
           deps: ['$ocLazyLoad', function($ocLazyLoad) {
             return $ocLazyLoad.load('ngImgCrop').then(function() {
-              return $ocLazyLoad.load('js/controllers/imgcrop.js');
+              return $ocLazyLoad.load('scripts/controllers/imgcrop.js');
             });
           }]
         }
@@ -334,12 +334,12 @@ angular.module('app')
 
       .state('app.form.select', {
         url: '/select',
-        templateUrl: 'tpl/form_select.tpl',
+        templateUrl: 'views/form_select.html',
         controller: 'SelectCtrl',
         resolve: {
           deps: ['$ocLazyLoad', function($ocLazyLoad) {
             return $ocLazyLoad.load('ui.select').then(function() {
-              return $ocLazyLoad.load('js/controllers/select.js');
+              return $ocLazyLoad.load('scripts/controllers/select.js');
             });
           }]
         }
@@ -347,12 +347,12 @@ angular.module('app')
 
       .state('app.form.slider', {
         url: '/slider',
-        templateUrl: 'tpl/form_slider.html',
+        templateUrl: 'views/form_slider.html',
         controller: 'SliderCtrl',
         resolve: {
           deps: ['$ocLazyLoad', function($ocLazyLoad) {
             return $ocLazyLoad.load('vr.directives.slider').then(function() {
-              return $ocLazyLoad.load('js/controllers/slider.js');
+              return $ocLazyLoad.load('scripts/controllers/slider.js');
             });
           }]
         }
@@ -360,12 +360,12 @@ angular.module('app')
 
       .state('app.form.editor', {
         url: '/editor',
-        templateUrl: 'tpl/form_editor.html',
+        templateUrl: 'views/form_editor.html',
         controller: 'EditorCtrl',
         resolve: {
           deps: ['$ocLazyLoad', function($ocLazyLoad) {
             return $ocLazyLoad.load('textAngular').then(function() {
-              return $ocLazyLoad.load('js/controllers/editor.js');
+              return $ocLazyLoad.load('scripts/controllers/editor.js');
             });
           }]
         }
@@ -373,12 +373,12 @@ angular.module('app')
 
       .state('app.form.xeditable', {
         url: '/xeditable',
-        templateUrl: 'tpl/form_xeditable.html',
+        templateUrl: 'views/form_xeditable.html',
         controller: 'XeditableCtrl',
         resolve: {
           deps: ['$ocLazyLoad', function($ocLazyLoad) {
             return $ocLazyLoad.load('xeditable').then(function() {
-              return $ocLazyLoad.load('js/controllers/xeditable.js');
+              return $ocLazyLoad.load('scripts/controllers/xeditable.js');
             });
           }]
         }
@@ -391,33 +391,33 @@ angular.module('app')
 
       .state('app.page.profile', {
         url: '/profile',
-        templateUrl: 'tpl/page_profile.html'
+        templateUrl: 'views/page_profile.html'
       })
 
       .state('app.page.post', {
         url: '/post',
-        templateUrl: 'tpl/page_post.html'
+        templateUrl: 'views/page_post.html'
       })
       .state('app.page.search', {
         url: '/search',
-        templateUrl: 'tpl/page_search.html'
+        templateUrl: 'views/page_search.html'
       })
       .state('app.page.invoice', {
         url: '/invoice',
-        templateUrl: 'tpl/page_invoice.html'
+        templateUrl: 'views/page_invoice.html'
       })
       .state('app.page.price', {
         url: '/price',
-        templateUrl: 'tpl/page_price.html'
+        templateUrl: 'views/page_price.html'
       })
       .state('app.docs', {
         url: '/docs',
-        templateUrl: 'tpl/docs.html'
+        templateUrl: 'views/docs.html'
       })
       //others
       .state('lockme', {
         url: 'lockme',
-        templateUrl: 'tpl/page_lockme.html'
+        templateUrl: 'views/page_lockme.html'
       })
       .state('access', {
         url: '/access',
@@ -425,35 +425,35 @@ angular.module('app')
       })
       .state('access.signin', {
         url: '/signin',
-        templateUrl: 'tpl/page_signin.html',
+        templateUrl: 'views/page_signin.html',
         resolve: {
           deps: ['uiLoad', function(uiLoad) {
-            return uiLoad.load(['js/controllers/signin.js']);
+            return uiLoad.load(['scripts/controllers/signin.js']);
           }]
         }
       })
       .state('access.signup', {
         url: '/signup',
-        templateUrl: 'tpl/page_signup.html',
+        templateUrl: 'views/page_signup.html',
         resolve: {
           deps: ['uiLoad', function(uiLoad) {
-            return uiLoad.load(['js/controllers/signup.js']);
+            return uiLoad.load(['scripts/controllers/signup.js']);
           }]
         }
       })
       .state('access.forgotpwd', {
         url: '/forgotpwd',
-        templateUrl: 'tpl/page_forgotpwd.html'
+        templateUrl: 'views/page_forgotpwd.html'
       })
       .state('access.404', {
         url: '/404',
-        templateUrl: 'tpl/page_404.html'
+        templateUrl: 'views/page_404.html'
       })
 
       //full calendar
       .state('app.calendar', {
         url: '/calendar',
-        templateUrl: 'tpl/app_calendar.html',
+        templateUrl: 'views/app_calendar.html',
         //use resolve to load other dependencies
         resolve: {
           deps: ['$ocLazyLoad', 'uiLoad', function($ocLazyLoad, uiLoad) {
@@ -463,7 +463,7 @@ angular.module('app')
               'vendor/jquery/jquery-ui-1.10.3.custom.min.js',
               'vendor/libs/moment.min.js',
               'vendor/jquery/fullcalendar/fullcalendar.min.js',
-              'js/app/calendar/calendar.js'
+              'scripts/app/calendar/calendar.js'
             ]).then(function() {
               return $ocLazyLoad.load('ui.calendar');
             })
@@ -475,12 +475,12 @@ angular.module('app')
       .state('app.mail', {
         abstract: true,
         url: '/mail',
-        templateUrl: 'tpl/mail.html',
+        templateUrl: 'views/mail.html',
         resolve: {
           deps: ['uiLoad', function(uiLoad) {
             return uiLoad.load([
-              'js/app/mail/mail.js',
-              'js/app/mail/mail-service.js',
+              'scripts/app/mail/mail.js',
+              'scripts/app/mail/mail-service.js',
               'vendor/libs/moment.min.js'
             ])
           }]
@@ -488,35 +488,35 @@ angular.module('app')
       })
       .state('app.mail.list', {
         url: '/inbox/{fold}',
-        templateUrl: 'tpl/mail.list.html'
+        templateUrl: 'views/mail.list.html'
       })
       .state('app.mail.detail', {
         url: '/{mailId:[0-9]{1,4}}',
-        templateUrl: 'tpl/mail.detail.html'
+        templateUrl: 'views/mail.detail.html'
       })
       .state('app.mail.compose', {
         url: '/compose',
-        templateUrl: 'tpl/mail.new.html'
+        templateUrl: 'views/mail.new.html'
       })
 
       .state('layout', {
         abstract: true,
         url: '/layout',
-        templateUrl: 'tpl/layout.html'
+        templateUrl: 'views/layout.html'
       })
       .state('layout.fullwidth', {
         url: '/fullwidth',
         views: {
           '': {
-            templateUrl: 'tpl/layout_fullwidth.html'
+            templateUrl: 'views/layout_fullwidth.html'
           },
           'footer': {
-            templateUrl: 'tpl/layout_footer_fullwidth.html'
+            templateUrl: 'views/layout_footer_fullwidth.html'
           }
         },
         resolve: {
           deps: ['uiLoad', function(uiLoad) {
-            return uiLoad.load(['js/controllers/vectormap.js']);
+            return uiLoad.load(['scripts/controllers/vectormap.js']);
           }]
         }
       })
@@ -524,10 +524,10 @@ angular.module('app')
         url: '/mobile',
         views: {
           '': {
-            templateUrl: 'tpl/layout_mobile.html'
+            templateUrl: 'views/layout_mobile.html'
           },
           'footer': {
-            templateUrl: 'tpl/layout_footer_mobile.html'
+            templateUrl: 'views/layout_footer_mobile.html'
           }
         }
       })
@@ -535,31 +535,31 @@ angular.module('app')
         url: '/app',
         views: {
           '': {
-            templateUrl: 'tpl/layout_app.html'
+            templateUrl: 'views/layout_app.html'
           },
           'footer': {
-            templateUrl: 'tpl/layout_footer_fullwidth.html'
+            templateUrl: 'views/layout_footer_fullwidth.html'
           }
         },
         resolve: {
           deps: ['uiLoad',
             function( uiLoad ){
-              return uiLoad.load( ['js/controllers/tab.js'] );
+              return uiLoad.load( ['scripts/controllers/tab.js'] );
             }]
         }
       })
       .state('apps', {
         abstract: true,
         url: '/apps',
-        templateUrl: 'tpl/layout_html'
+        templateUrl: 'views/layout_html'
       })
       .state('apps.note', {
         url: '/note',
-        templateUrl: 'tpl/apps_note.html',
+        templateUrl: 'views/apps_note.html',
         resolve: {
           deps: ['uiLoad', function(uiLoad) {
             return uiLoad.load([
-              'js/app/note/note.js',
+              'scripts/app/note/note.js',
               'vendor/libs/moment.min.js'
             ]);
           }]
@@ -567,25 +567,25 @@ angular.module('app')
       })
       .state('apps.contact', {
         url: '/contact',
-        templateUrl: 'tpl/apps_contact.html',
+        templateUrl: 'views/apps_contact.html',
         resolve: {
           deps: ['uiLoad', function(uiLoad) {
-            return uiLoad.load(['js/app/contact/contact.js']);
+            return uiLoad.load(['scripts/app/contact/contact.js']);
           }]
         }
       })
       .state('app.weather', {
         url: '/weather',
-        templateUrl: 'tpl/apps_weather.html',
+        templateUrl: 'views/apps_weather.html',
         resolve: {
           deps: ['$ocLazyLoad', function($ocLazyLoad) {
             return $ocLazyLoad.load({
               name: 'angular-skycons',
               files: [
-                'js/app/weather/skycons.js',
+                'scripts/app/weather/skycons.js',
                 'vendor/libs/moment.min.js',
-                'js/app/weather/angular-skycons.js',
-                'js/app/weather/ctrl.js'
+                'scripts/app/weather/angular-skycons.js',
+                'scripts/app/weather/ctrl.js'
               ]
             });
           }]
@@ -593,7 +593,7 @@ angular.module('app')
       })
       .state('music', {
         url: '/music',
-        templateUrl: 'tpl/music.html',
+        templateUrl: 'views/music.html',
         controller: 'MusicCtrl',
         resolve: {
           deps: ['$ocLazyLoad',
@@ -604,19 +604,19 @@ angular.module('app')
                 'com.2fdevs.videogular.plugins.overlayplay',
                 'com.2fdevs.videogular.plugins.poster',
                 'com.2fdevs.videogular.plugins.buffering',
-                'js/app/music/ctrl.js',
-                'js/app/music/theme.css'
+                'scripts/app/music/ctrl.js',
+                'scripts/app/music/theme.css'
               ]);
             }]
         }
       })
       .state('music.home', {
         url: '/home',
-        templateUrl: 'tpl/music.home.html'
+        templateUrl: 'views/music.home.html'
       })
       .state('music.genres', {
         url: '/genres',
-        templateUrl: 'tpl/music.genres.html'
+        templateUrl: 'views/music.genres.html'
       })
       .state('music.detail', {
         url: '/detail',
@@ -624,14 +624,14 @@ angular.module('app')
       })
       .state('music.mtv', {
         url: '/mtv',
-        templateUrl: 'tpl/music.mtv.html'
+        templateUrl: 'views/music.mtv.html'
       })
       .state('music.mtvdetail', {
         url: '/mtvdetail',
-        templateUrl: 'tpl/music.mtv.detail.html'
+        templateUrl: 'views/music.mtv.detail.html'
       })
       .state('music.playlist', {
         url: '/playlist/{fold}',
-        templateUrl: 'tpl/music.playlist.html'
+        templateUrl: 'views/music.playlist.html'
       })
   }]);
